@@ -45,7 +45,7 @@ public class A1Adept {
 		index = findSmallest(totals);
 		System.out.println("Smallest: " + firstNames[index] + " " + lastNames[index]
 				+ " (" + String.format("%.2f", totals[index]) + ")");
-		System.out.printf("Average: %.2f", findAverage(totals));
+		System.out.printf("Average: %.2f%n", findAverage(totals));
 		
 		// Close the Scanner object
 		scan.close();
