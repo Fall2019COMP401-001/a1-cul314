@@ -31,12 +31,19 @@ public class A1Jedi {
 			
 			int numberOfItemsBought = scan.nextInt();
 			
+			// used to calculate a the number of customers who purchased each item
+			int[] quantityChange = quantityPurchased.clone();
+			
 			for (int j = 0; j < numberOfItemsBought; j++) {
 				int quantity = scan.nextInt();
 				int itemIndex = getItemIndex(itemNames, scan.next());
 				
-				customersPurchased[itemIndex] += 1;
 				quantityPurchased[itemIndex] += quantity;
+			}
+			
+			// Calculate which items a customer purchased
+			for (int j = 0; j < itemCount; j++) {
+				if(quantityPurchased[j] > quantityChange[j]) customersPurchased[j]++;
 			}
 		}
 		
@@ -63,4 +70,5 @@ public class A1Jedi {
 		}
 		return 0;
 	}
+	
 }
